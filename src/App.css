@@ -1,0 +1,139 @@
+@import "tailwindcss";
+.hangman{
+    width: 500px;
+    margin: auto;
+}
+.floor{
+    width:130px;
+    height:20px;
+    background:#000;
+    position: absolute;
+    top: 45px;
+    left: 140px;
+}
+
+.pole{
+
+    height: 300px;
+    width: 20px;
+    background: #000;
+    position: absolute;
+    bottom: 20px;
+    left: 140px;
+}
+.stand{
+
+    height: 20px;
+    width: 200px;
+    background: #000;
+    position: absolute;
+    bottom: 20px;
+        left: 50px;
+
+        
+
+}
+
+.hooks{
+    height: 40px;
+    width: 20px;
+    background: #000;
+    position: absolute;
+    top: 46px;
+    left: 250px;
+
+}
+.head{
+
+    height: 50px;
+    width: 50px;
+    background: #000;
+    position: absolute;
+    top: 85px;
+    left: 235px;
+    border-radius: 50%;
+
+
+}
+.body{
+    
+        height: 100px;
+        width: 20px;
+        background: #000;
+        position: absolute;
+        top: 135px;
+        left: 250px;
+}
+
+.left-hand{
+    height: 80px;
+    width: 20px;
+    background: #000;
+    position: absolute;
+    top: 135px;
+    left: 228px;
+    transform: rotate(45deg);
+}
+.right-hand{
+    height: 80px;
+    width: 20px;
+    background: #000;
+    position: absolute;
+    top: 135px;
+    left: 280px;
+    transform: rotate(125deg);
+}
+
+.left-leg{
+
+        height: 80px;
+        width: 20px;
+        background: #000;
+        position: absolute;
+        top: 219px;
+        left: 221px;
+        transform: rotate(45deg);
+}
+.right-leg{
+    height: 80px;
+    width: 20px;
+    background: #000;
+    position: absolute;
+    top: 219px;
+    left: 283px;
+    transform: rotate(130deg);
+}
+.hangword{
+    gap: 2rem;
+    /* padding: 0rem; */
+    display: flex;
+    font-size: 4rem;
+
+    justify-content: center;
+}
+.h-letter{
+    border-bottom: 5px solid #000;
+    gap: 1rem;
+    width: 100px;
+}
+
+
+.keyboard{
+
+}
+
+.letter{
+    font-size: 2rem;
+    padding: 1rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    word-wrap: break-word;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: all 0.3s ease;
+ &:hover{
+    background-color: #000;
+    color: #fff;
+    scale: 1.1;
+}
+}
