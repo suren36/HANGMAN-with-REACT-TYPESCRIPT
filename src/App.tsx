@@ -31,7 +31,7 @@ function App() {
       <HangmanDrawing />
       <Homepage/>
       <Hangmanword />
-      <Keyword />
+    
     </>
   );
 }

@@ -1,36 +1,34 @@
-import React from 'react'
-import { useState } from 'react';
+import React from 'react';
 
-// Define props interface for THIS component
 interface HangmanwordProps {
   guessWord?: string;
+  guessedLetters?: string[];
 }
 
-export const Hangmanword = ({ guessWord }: HangmanwordProps) => {
-  // Use the guessWord prop instead of the hardcoded value
-  if (!guessWord) return <p>Error: No word provided</p>; 
+export const Hangmanword = ({ guessWord, guessedLetters = [] }: HangmanwordProps) => {
+  if (!guessWord) return <p>Error: No word provided</p>;
 
-  const guessedLetter = ()=>{
+  // Convert guessWord and guessedLetters to uppercase for consistent comparison
+  const upperGuessWord = guessWord.toUpperCase();
+  const upperGuessedLetters = guessedLetters.map((letter) => letter.toUpperCase());
 
-    return  guessWord.split("").map((letter,index) =>{
-return <span key ={index } className='h-letter'>{letter}</span>
-  })
-  }
-
-  const  guessedLetterArray = 
-  console.log(guessedLetter());
-  
-//   const guessedletters = ["A", "E", "I", "O", "U", "W"];
-  console.log(guessWord);
-  
+  const displayWord = () => {
+    return upperGuessWord.split("").map((letter, index) => (
+      <span key={index} className="h-letter">
+        {upperGuessedLetters.includes(letter) ? letter: "___"}
+      </span>
+    
+    ));
+  };
 
   return (
-   <>
-    <div className="hangword uppercase text-center text-8xl m-2 gap-1">
-
-
-
-      {guessedLetter()}    </div>
-   </>
-  )
-}
+    <div className="hangword uppercase text-center text-8xl m-2 gap-4 flex-col">
+      <div className="guessedLetter flex gap-4 m-auto">{displayWord()}</div>
+      <div className="guessedword">
+        <span className="text-3xl text-center block bg-black text-white">
+          Letters You Tried: {guessedLetters.join(", ")}
+        </span>
+      </div>
+    </div>
+  );
+};
