@@ -1,6 +1,9 @@
-import React from 'react'
 
-export const BoxOfLetterGuessed = ({guessedLetters}) => {
+interface BoxOfLetterGuessedProps {
+  guessedLetters: string[];
+}
+
+export const BoxOfLetterGuessed = ({guessedLetters}: BoxOfLetterGuessedProps) => {
   return (
     <div>
 
@@ -19,3 +22,6 @@ export const BoxOfLetterGuessed = ({guessedLetters}) => {
     </div>
   )
 }
+
+
+export default BoxOfLetterGuessed

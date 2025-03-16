@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Hangmanword } from "./Hangmanword";
 import { HangmanDrawing } from "./HangmanDrawing";
-import { BoxOfLetterGuessed } from "./BoxOfLetterGuessed";
+import {BoxOfLetterGuessed} from "../components/BoxOfLetterGuessed"
+
 
 interface KeywordProps {
   guessWord?: string;
+  guessedLetters?: string[];
 
 
 }
@@ -57,7 +59,7 @@ export const Keyword = ({ guessWord = "" }: KeywordProps) => {
 <div className="screen grid grid-cols-2 gap-4 justify-center p-5">
 <HangmanDrawing noOfWrongGuesses={noOfWrongGuesses} /> 
 
-<BoxOfLetterGuessed guessedLetters={guessedLetters} />  
+<BoxOfLetterGuessed guessedLetters={guessedLetters} />
 
 
 </div>
