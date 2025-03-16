@@ -8,7 +8,6 @@ interface KeywordProps {
   guessWord?: string;
   guessedLetters?: string[];
 
-
 }
 
 export const Keyword = ({ guessWord = "" }: KeywordProps) => {
@@ -61,6 +60,8 @@ export const Keyword = ({ guessWord = "" }: KeywordProps) => {
 
 <BoxOfLetterGuessed guessedLetters={guessedLetters} />
 
+<p>Wrong Guesses: {noOfWrongGuesses}</p>
+
 
 </div>
 
@@ -84,7 +85,6 @@ export const Keyword = ({ guessWord = "" }: KeywordProps) => {
 
       <Hangmanword guessWord={guessWord} guessedLetters={guessedLetters}  />
 
-      <p>Wrong Guesses: {noOfWrongGuesses}</p>
 {/* "You lost!" Popup */}
 {noOfWrongGuesses >= 6 && (
   <div className="fixed inset-0 flex items-center justify-center backdrop-brightness-50 bg-opacity-50">
