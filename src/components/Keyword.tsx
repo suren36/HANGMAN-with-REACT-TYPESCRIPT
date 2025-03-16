@@ -73,7 +73,7 @@ export const Keyword = ({ guessWord = "" }: KeywordProps) => {
           <span
             onClick={() => handleClick(letter)}
             key={index}
-            className={`letter text-center min-w-25 cursor-pointer ${
+            className={`letter text-center cursor-pointer ${
               guessedLetters.includes(letter) ? "opacity-50" : ""
             }`}
           >
