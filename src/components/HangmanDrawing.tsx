@@ -17,6 +17,7 @@ export const HangmanDrawing = () => {
 
 {/* BODY PART */}
 
+
 <div className="head "></div>
 <div className="body"></div>
 <div className="left-hand"></div>

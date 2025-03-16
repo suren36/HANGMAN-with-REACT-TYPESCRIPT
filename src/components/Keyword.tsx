@@ -5,11 +5,8 @@ interface KeywordProps {
   guessWord?: string;
 }
 
-export const Keyword = ({ guessWord }: KeywordProps) => {
-  const Letters = [
-    "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O",
-    "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
-  ];
+export const Keyword = ({ guessWord = "" }: KeywordProps) => {
+  const Letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
 
@@ -19,8 +16,12 @@ export const Keyword = ({ guessWord }: KeywordProps) => {
     }
   };
 
+  const isGameOver = (): boolean => {
+    const isLetterGuessed = (letter: string) => guessedLetters.includes(letter);
+    return guessWord.toUpperCase().split("").every(isLetterGuessed);
+  };
+
   const handleClick = (letter: string) => {
-    console.log("Clicked", letter);
     letterGuessed(letter);
   };
 
@@ -45,13 +46,20 @@ export const Keyword = ({ guessWord }: KeywordProps) => {
           <span
             onClick={() => handleClick(letter)}
             key={index}
-            className="letter text-center min-w-25 cursor-pointer"
+            className={`letter text-center min-w-25 cursor-pointer ${
+              guessedLetters.includes(letter) ? "opacity-50" : ""
+            }`}
           >
             {letter}
           </span>
         ))}
       </div>
+
       <Hangmanword guessWord={guessWord} guessedLetters={guessedLetters} />
+
+      {isGameOver() && (
+        <div className="text-center text-green-500 text-2xl mt-4">🎉 You won! 🎉</div>
+      )}
     </div>
   );
 };

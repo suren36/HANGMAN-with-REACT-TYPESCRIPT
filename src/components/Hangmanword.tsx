@@ -6,7 +6,7 @@ interface HangmanwordProps {
 }
 
 export const Hangmanword = ({ guessWord, guessedLetters = [] }: HangmanwordProps) => {
-  if (!guessWord) return <p>Error: No word provided</p>;
+  if (!guessWord) return <p></p>;
 
   // Convert guessWord and guessedLetters to uppercase for consistent comparison
   const upperGuessWord = guessWord.toUpperCase();
