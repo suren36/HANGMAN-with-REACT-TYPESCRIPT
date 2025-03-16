@@ -26,11 +26,9 @@ function App() {
   return (
     <>
  
- <h2 className='text-6xl m-auto text-center p-5  text-amber-950 bold'> CAN YOU SAVE ME ?</h2>
-
-      <HangmanDrawing />
-      <Homepage/>
       <Hangmanword />
+      <Homepage/>
+    
     
     </>
   );

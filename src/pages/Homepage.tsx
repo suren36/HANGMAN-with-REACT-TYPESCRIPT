@@ -4,6 +4,7 @@ import { Keyword } from '../components/Keyword';
 
 interface HomepageProps {
   initialWord?: string;
+  
 }
 
 export const Homepage = ({ initialWord }: HomepageProps) => {

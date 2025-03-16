@@ -104,7 +104,7 @@
     transform: rotate(130deg);
 }
 .hangword{
-    gap: 2rem;
+    gap: 1rem;
     /* padding: 0rem; */
     display: flex;
     font-size: 4rem;
@@ -114,15 +114,14 @@
 .h-letter{
     gap: 1rem;
     width: 100px;
+    min-width: 5rem;
 }
 
 
-.keyboard{
 
-}
 
 .letter{
-    font-size: 2rem;
+    font-size: 1rem;
     padding: 1rem;
     border: 1px solid #000;
     border-radius: 5px;

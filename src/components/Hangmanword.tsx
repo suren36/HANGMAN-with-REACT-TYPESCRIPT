@@ -24,11 +24,11 @@ export const Hangmanword = ({ guessWord, guessedLetters = [] }: HangmanwordProps
   return (
     <div className="hangword uppercase text-center text-8xl m-2 gap-4 flex-col">
       <div className="guessedLetter flex gap-4 m-auto">{displayWord()}</div>
-      <div className="guessedword">
+      {/* <div className="guessedword">
         <span className="text-3xl text-center block bg-black text-white">
           Letters You Tried: {guessedLetters.join(", ")}
         </span>
-      </div>
+      </div> */}
     </div>
   );
 };
